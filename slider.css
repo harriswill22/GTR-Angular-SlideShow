@@ -1,0 +1,36 @@
+*{box-sizing:border-box;}
+.container{
+margin: 150px;
+}
+.container h1 {
+display: flex;
+justify-content: center;
+justify-items: center;
+color: tomato;
+
+}
+.slides img{
+  margin: 15px;
+  overflow: hidden;
+  max-height: 200px;
+  max-width: 250px;
+  
+}
+.slides {
+  display: flex;
+  justify-content: center;
+}
+.buttons button {
+margin: 6px;
+}
+
+.buttons {
+display: flex;
+justify-content: center;
+}
+
+.buttons button:hover{
+  background-color: tomato;
+}
+
+
