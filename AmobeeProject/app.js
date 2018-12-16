@@ -1,3 +1,8 @@
+(function(){
+  'use strict'
+  angular.module('app',[])
+})();
+
 (function () {
   'use strict'
   angular.module('app').controller('GTRController', 
@@ -10,10 +15,10 @@
   gtr.photos = [
     // gtr images
     {
-      img: "./images/download (2).jpeg"
+      img : "http://py.processing.org/tutorials/pixels/imgs/tint1.jpg"
     },
     {
-      img: "./images/download.jpeg"
+      img: "www_google_com-search.png"
     },
     {
       img: "./images/2018-nissan-gt-r.jpg"

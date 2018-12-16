@@ -1,0 +1,154 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+
+    <!-- Scripts -->
+<script>
+    // Module 
+(function(){
+'use strict'
+angular.module('app',[])
+})();
+
+(function () {
+    // Controller 
+  'use strict'
+  angular.module('app').controller('GTRController', 
+  GTRController);
+  GTRController.inject =['$scope'];
+
+  function GTRController($scope){
+    const gtr = this; // refers to the function that "gtr" is in 
+
+  gtr.photos = [
+    // gtr images
+    {
+      img : "https://upload.wikimedia.org/wikipedia/commons/7/7e/Nissan_GT-R_MY2017_%281%29.jpg"
+    },
+    {
+      img: "data:image/jpeg;base64,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"
+    },
+    {
+      img: "./images/2018-nissan-gt-r.jpg"
+    },
+    {
+      img: "./images/skyline.jpeg"
+    },
+  
+  ];
+
+$scope.CurrentSlideIndex = 0; //Defines current slide at index of 0
+$scope.PrevSlideIndex = gtr.photos.length -1; //Defines last slide as CurrentSlide decremented 1
+$scope.NextSlideIndex= $scope.CurrentSlideIndex +1; //Defines next slide as CurrentSlide increment by 1
+
+gtr.next = function() { //Created a function for the next button 
+  if(gtr.photos.length -1 ===$scope.CurrentSlideIndex+1) {
+    $scope.CurrentSlideIndex =$scope.CurrentSlideIndex +1; 
+    $scope.PrevSlideIndex = $scope.CurrentSlideIndex -1;
+    $scope.NextSlideIndex =0;
+  }else if(gtr.photos.length -1 ==$scope.CurrentSlideIndex){
+    $scope.CurrentSlideIndex = 0;
+    $scope.PrevSlideIndex = gtr.photos.length -1;
+    $scope.NextSlideIndex = $scope.CurrentSlideIndex +1;
+  }else{
+    $scope.CurrentSlideIndex = $scope.CurrentSlideIndex + 1;
+    $scope.PrevSlideIndex = $scope.CurrentSlideIndex -1;
+    $scope.NextSlideIndex = $scope.CurrentSlideIndex +1;
+}
+}
+
+gtr.prev = function() { //Created function for previous button
+    
+  if ($scope.CurrentSlideIndex - 1 === 0) {
+    $scope.CurrentSlideIndex =$scope.CurrentSlideIndex -1;
+    $scope.PrevSlideIndex =  gtr.photos.length -1;
+      $scope.NextSlideIndex = $scope.CurrentSlideIndex +1;
+    
+  } else if ($scope.CurrentSlideIndex === 0){
+      $scope.CurrentSlideIndex = gtr.photos.length -1;
+      $scope.PrevSlideIndex =  $scope.CurrentSlideIndex - 1;
+      $scope.NextSlideIndex = 0;
+  } else {
+      $scope.CurrentSlideIndex = $scope.CurrentSlideIndex -1;
+      $scope.PrevSlideIndex =  $scope.CurrentSlideIndex - 1;
+      $scope.NextSlideIndex = $scope.CurrentSlideIndex +1;
+  }
+}
+  }
+
+})(); //calls GTRController Function 
+
+    </script>
+    
+
+
+
+
+
+
+    <!-- Style -->
+<style>
+*{box-sizing:border-box;}
+
+body{
+    background-image: url("https://www.desktopbackground.org/p/2014/01/15/701833_paint-code-for-wheels-gt-r-register-nissan-skyline-and-gtr_1024x682_h.jpg");
+    background-size: cover;
+}
+.container{
+margin: 150px;
+}
+.container h1 {
+display: flex;
+justify-content: center;
+justify-items: center;
+color: tomato;
+
+}
+.slides img{
+margin: 15px;
+overflow: hidden;
+max-height: 200px;
+max-width: 250px;
+
+}
+.slides {
+display: flex;
+justify-content: center;
+}
+.buttons button {
+margin: 6px;
+}
+
+.buttons {
+display: flex;
+justify-content: center;
+}
+
+.buttons button:hover{
+background-color: tomato;
+}
+
+</style>
+
+
+
+
+</head>
+
+<body ng-controller="GTRController as gtr">
+    <div class="container">
+    <h1>GTR Image Slider</h1>
+    <div class="buttons">
+            <button ng-click="gtr.prev()">Previous</button>
+            <button ng-click="gtr.next()">Next</button>
+    </div>
+    <div class="slides">
+        <img src="{{gtr.photos[PrevSlideIndex].img}}"/> 
+        <img src="{{gtr.photos[CurrentSlideIndex].img}}"/>
+        <img src="{{gtr.photos[NextSlideIndex].img}}" />
+        
+    </div>
+</div>
+</body>
+</html>
